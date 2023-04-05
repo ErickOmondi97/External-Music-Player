@@ -1,0 +1,49 @@
+# Importing the necessary modules
+import tkinter as tk
+import pygame
+import time
+ 
+# Defining the play function
+def play():
+    pygame.mixer.music.load(file_name.get())
+    pygame.mixer.music.play()
+ 
+# Defining the pause function
+def pause():
+    pygame.mixer.music.pause()
+ 
+# Defining the stop function
+def stop():
+    pygame.mixer.music.stop()
+ 
+root = tk.Tk()
+ 
+# Setup the window
+root.title("External Music Player")
+root.geometry("500x500")
+ 
+# Setting up the pygame mixer
+pygame.mixer.init()
+ 
+# Creating the file label
+file_label = tk.Label(root, text="Enter the file name to be played")
+file_label.pack()
+ 
+# Creating the entry field
+file_name = tk.Entry(root)
+file_name.pack()
+ 
+# Creating the play button
+play_button = tk.Button(root, text="Play", command=play)
+play_button.pack()
+ 
+# Creating the pause button
+pause_button = tk.Button(root, text="Pause", command=pause)
+pause_button.pack()
+ 
+# Creating the stop button
+stop_button = tk.Button(root, text="Stop", command=stop)
+stop_button.pack()
+ 
+# Entering the main loop
+root.mainloop()
